@@ -1,12 +1,12 @@
 [Unit]
-Description=Daemon for the mouse of the MiniBook
+Description=Daemon for the trackpad of the MiniBook
 ConditionPathExists=/usr/bin/
 Requires=sysinit.target
 After=sysinit.target basic.target
 
 [Service]
 
-ExecStart=/usr/bin/moused -c
+ExecStart=/usr/bin/trackpadd -c
 Restart=no
 Type=simple
 

@@ -1,4 +1,4 @@
-TARGETS = moused keyboardd tabletmoded
+TARGETS = trackpadd keyboardd tabletmoded
 LIBS = common
 
 .PHONY: all clean install uninstall $(TARGETS) $(LIBS)

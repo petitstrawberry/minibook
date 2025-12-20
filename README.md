@@ -55,7 +55,7 @@ sudo make install
 ## Software
 
 - [x] tabletmoded
-- [x] moused
+- [x] trackpadd
 - [x] keyboardd
 
 ### tabletmoded
@@ -67,11 +67,11 @@ tabletmoded is a daemon that triggers the tablet mode of the MiniBook.
   - Trigger the tablet mode when the MiniBook is folded
   - Untrigger the tablet mode when the MiniBook is unfolded
   - Disable the keyboard using keyboardd when the tablet mode is triggered and enable the keyboard when the tablet mode is untriggered
-  - Disable the mouse using moused when the tablet mode is triggered and enable the mouse when the tablet mode is untriggered
+  - Disable the trackpad using trackpadd when the tablet mode is triggered and enable the trackpad when the tablet mode is untriggered
 
-### moused
+### trackpadd
 
-moused is a daemon that manages the trackpointer / trackpad of the MiniBook. 
+trackpadd is a daemon that manages the trackpointer / trackpad of the MiniBook. 
 
 - Calibrate the trackpointer / trackpad
 - Switch enable/disable the trackpointer / trackpad
@@ -84,9 +84,9 @@ keyboardd is a daemon that manages the keyboard of the MiniBook.
 
 ## Mechanism
 
-mousedd / keyboardd create virtual devices that pass through input events received from the moused / keyboard.  By enabling and disabling this pass-through functionality, you can stop and enable these devices. It is also possible to process the values if necessary (e.g. calibration of the track pointer with moused).
+trackpaddd / keyboardd create virtual devices that pass through input events received from the trackpadd / keyboard.  By enabling and disabling this pass-through functionality, you can stop and enable these devices. It is also possible to process the values if necessary (e.g. calibration of the track pointer with trackpadd).
 
-tabletmoded calculates the open/close angle of the screen based on the values of the two accelerometers built into the main unit, and determines whether the PC is in tablet mode or not based on the angle. When it is determined that the PC is in tablet mode, it disables the mouse and keyboard devices using moused and keyboardd. Furthermore, it issues an event (SW_TABLET_MODE) to enable the tablet mode by the created virtual device, and notifies the whole system that the PC is in the tablet mode. Depending on the desktop environment, the behavior will change for tablets (e.g., GNOME will enable the on-screen keyboard).
+tabletmoded calculates the open/close angle of the screen based on the values of the two accelerometers built into the main unit, and determines whether the PC is in tablet mode or not based on the angle. When it is determined that the PC is in tablet mode, it disables the trackpad and keyboard devices using trackpadd and keyboardd. Furthermore, it issues an event (SW_TABLET_MODE) to enable the tablet mode by the created virtual device, and notifies the whole system that the PC is in the tablet mode. Depending on the desktop environment, the behavior will change for tablets (e.g., GNOME will enable the on-screen keyboard).
 
 This mechanism can be abused by keyloggers, etc., but of course we do not do any such processing, and you can check the source code if necessary.
 

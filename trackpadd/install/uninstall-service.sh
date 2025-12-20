@@ -9,6 +9,6 @@ if [ -z "$TARGETDIR" ]; then
     exit
 fi
 
-# Remove the moused.service from $TARGETDIR
-echo "Removing moused.service from $TARGETDIR"
-rm $TARGETDIR/moused.service
+# Remove the trackpadd.service from $TARGETDIR
+echo "Removing trackpadd.service from $TARGETDIR"
+rm $TARGETDIR/trackpadd.service

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install script for moused as a systemd service
+# Install script for trackpadd as a systemd service
 
 # Check if the script is run as root
 # If not, exit with error
@@ -23,12 +23,12 @@ DESTDIR="/etc/systemd/system" ./install-service.sh
 echo "Reloading systemd"
 systemctl daemon-reload
 
-# Start the moused service
-# Enable the moused service to start on boot
+# Start the trackpadd service
+# Enable the trackpadd service to start on boot
 
-echo "Starting moused service"
-systemctl enable moused
-systemctl start moused
+echo "Starting trackpadd service"
+systemctl enable trackpadd
+systemctl start trackpadd
 
-echo "moused installed successfully"
+echo "trackpadd installed successfully"
 

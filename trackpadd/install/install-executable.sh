@@ -9,6 +9,6 @@ if [ -z "$DESTDIR" ]; then
     exit
 fi
 
-# Copy the moused to $DESTDIR
-echo "Copying moused to $DESTDIR"
-install -Dm755 ../bin/moused $DESTDIR/moused
+# Copy the trackpadd to $DESTDIR
+echo "Copying trackpadd to $DESTDIR"
+install -Dm755 ../bin/trackpadd $DESTDIR/trackpadd

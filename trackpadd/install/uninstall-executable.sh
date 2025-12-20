@@ -9,6 +9,6 @@ if [ -z "$TARGETDIR" ]; then
     exit
 fi
 
-# Remove the moused from $TARGETDIR
-echo "Removing moused from $TARGETDIR"
-rm $TARGETDIR/moused
+# Remove the trackpadd from $TARGETDIR
+echo "Removing trackpadd from $TARGETDIR"
+rm $TARGETDIR/trackpadd

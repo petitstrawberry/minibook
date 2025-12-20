@@ -21,10 +21,10 @@
 #include "server.h"
 #include "vdevice.h"
 
-#define VERSION "tabletmoded 1.3.0"
+#define VERSION "tabletmoded 1.4.0"
 
 #define KEYBOARDD_SOCK "/var/run/keyboardd.sock"
-#define mouseD_SOCK "/var/run/moused.sock"
+#define trackpadD_SOCK "/var/run/trackpadd.sock"
 
 #define TABLETMODED_SOCK "/var/run/tabletmoded.sock"
 
@@ -163,8 +163,8 @@ void set_tabletmode(int value) {
     if (send_command(KEYBOARDD_SOCK, 0, !value) == -1) {
         perror("Cannot send the command to the keyboardd");
     }
-    if (send_command(mouseD_SOCK, 0, !value) == -1) {
-        perror("Cannot send the command to the moused");
+    if (send_command(trackpadD_SOCK, 0, !value) == -1) {
+        perror("Cannot send the command to the trackpadd");
     }
     is_enabled_tabletmode = value;
     emit(output, EV_SW, SW_TABLET_MODE, value);

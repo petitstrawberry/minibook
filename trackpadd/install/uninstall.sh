@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Uninstall script for moused
+# Uninstall script for trackpadd
 
 # Check if the script is run as root
 # If not, exit with error
@@ -13,11 +13,11 @@ fi
 # Change to the directory of the script
 cd "$(dirname "$0")"
 
-# Stop the moused service
-# Disable the moused service from starting on boot
-echo "Stopping moused service"
-systemctl stop moused
-systemctl disable moused
+# Stop the trackpadd service
+# Disable the trackpadd service from starting on boot
+echo "Stopping trackpadd service"
+systemctl stop trackpadd
+systemctl disable trackpadd
 
 # Execute the uninstall-executable.sh script
 chmod +x ./uninstall-executable.sh
@@ -30,5 +30,5 @@ TARGETDIR="/etc/systemd/system" ./uninstall-service.sh
 echo "Reloading systemd"
 systemctl daemon-reload
 
-echo "moused uninstalled successfully"
+echo "trackpadd uninstalled successfully"
 

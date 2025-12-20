@@ -9,6 +9,6 @@ if [ -z "$DESTDIR" ]; then
     exit
 fi
 
-# Copy the moused.service file to $DESTDIR
-echo "Copying moused.service to $DESTDIR"
-install  -Dm644 ./moused.service $DESTDIR/moused.service
+# Copy the trackpadd.service file to $DESTDIR
+echo "Copying trackpadd.service to $DESTDIR"
+install  -Dm644 ./trackpadd.service $DESTDIR/trackpadd.service

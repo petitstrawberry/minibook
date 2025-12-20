@@ -23,8 +23,8 @@ DESTDIR="/etc/systemd/system" ./install-service.sh
 echo "Reloading systemd"
 systemctl daemon-reload
 
-# Start the moused service
-# Enable the moused service to start on boot
+# Start the trackpadd service
+# Enable the trackpadd service to start on boot
 
 echo "Starting keyboardd service"
 systemctl enable keyboardd
